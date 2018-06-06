@@ -19,5 +19,12 @@ tmp="$2/tmp/$2.jar"
 
 if [ -f $tmp ];then
  echo "start service with $tmp"
- nohup java -jar "$tmp" > $2/$2.log 2>&1 &
+
+ log="$2/$2.log"
+# if [ ! -f $log ];then
+#  sudo touch $log
+#  sudo chmod 777 $log
+# fi
+
+ nohup java -jar "$tmp" > $log 2>&1 &
 fi

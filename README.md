@@ -75,7 +75,9 @@
 </details>
 
 ### <p id = "shell">Shell:</p>
-<details><summary>脚本内容,<b>默认端口设置了8081</b></summary>
+<details><summary>脚本</summary>
+
+> **`请赋予脚本写入权限u+x`**
 
 ```shell
 #!/bin/bash -ilex
@@ -99,7 +101,14 @@ tmp="$2/tmp/$2.jar"
 
 if [ -f $tmp ];then
  echo "start service with $tmp"
- nohup java -jar "$tmp" > $2/$2.log 2>&1 &
+
+ log="$2/$2.log"
+# if [ ! -f $log ];then
+#  sudo touch $log
+#  sudo chmod 777 $log
+# fi
+
+ nohup java -jar "$tmp" > $log 2>&1 &
 fi
 
 ```
