@@ -117,6 +117,8 @@ fi
 
 ### <p id = "shellcommand">Shell Command:</p>
 ```shell
+BUILD_ID=DONTKILLME
+cd /home/projects  /~~wallet~~
 # remote/shell shell 所在部署服务器的地址
 # port application port
 # Remote directory jar包所在部署服务器地址
