@@ -21,7 +21,13 @@ echo "pids=[ $pids ]"
 for pid in $pids;
 do
  if [ ! -z $pid ];then
-  kill -9 $pid
+ { # try
+   kill -9 $pid
+ } || {
+   # catch
+   echo "-------------------------Fail------------------------"
+ }
+
  fi
 done
 
