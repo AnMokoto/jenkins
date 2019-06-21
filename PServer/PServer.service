@@ -1,0 +1,14 @@
+[UNIT]
+Description=PingAn Service
+After=network.target
+
+[Service] 
+Type=forking
+ExecStartPre=
+ExecStart=/data/service/PServer/start.sh
+ExecReload=/data/service/PServer/stop.sh && /data/service/PServer/start.sh
+ExecStop=/data/service/PServer/stop.sh
+PrivateTmp=True
+
+[Install]
+WantedBy=multi-user.target
